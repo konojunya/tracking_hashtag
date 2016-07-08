@@ -18,7 +18,7 @@ try {
   echo $error.PHP_EOL;
 }
 
-$list_id_str = $to->post("lists/create",array("name"=>"junjunTest"))->id_str;
+$list_id_str = $to->post("lists/create",array("name"=>$list_name))->id_str;
 echo "list ".$list_name." を作りました。\nlisten ".$target_hashtag."\n";
 
 $to->streaming('statuses/filter', function ($status) use ($to,$list_id_str) {
